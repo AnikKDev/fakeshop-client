@@ -6,7 +6,9 @@ import Products from './Pages/Products/Products';
 import About from './Pages/About/About';
 import Blogs from './Pages/Blogs/Blogs';
 import Contact from './Pages/Contact/Contact';
+
 function App() {
+
   return (
     <div>
       <Header />
