@@ -1,0 +1,14 @@
+.buy-now-btn {
+    border: 0;
+    outline: 0;
+    padding: 6px 15px;
+    font-size: 1.2em;
+    border-radius: 4px;
+    background-color: #CFC09A;
+    color: white;
+    font-weight: bold;
+}
+
+.buy-now-btn:active {
+    background-color: #b8aa88c5;
+}

@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .card-images {
     height: 350px;
 }
@@ -11,6 +15,6 @@
 }
 
 .product-card:hover {
-    transform: translateY(-1.3rem);
+    transform: translateY(-1.1rem);
     box-shadow: #cfc09a 0px 4px 18px 1px;
 }
