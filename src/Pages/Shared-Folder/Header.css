@@ -1,0 +1,14 @@
+.menu-items {
+    font-size: 1.12em;
+}
+
+.nav-links a {
+    color: black;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #CFC09A;
+}
