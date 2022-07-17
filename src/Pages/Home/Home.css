@@ -14,4 +14,5 @@
 
 .suggestion-container ul li:hover {
     background-color: #fff;
+    cursor: pointer;
 }
