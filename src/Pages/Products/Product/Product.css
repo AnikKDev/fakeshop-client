@@ -2,6 +2,10 @@ a {
     text-decoration: none;
 }
 
+.product-heading {
+    font-family: 'Lato', sans-serif;
+}
+
 .card-images {
     height: 350px;
 }

@@ -2,11 +2,19 @@
     font-size: 1.12em;
 }
 
+
+.header-logo {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+}
+
 .nav-links a {
     color: black;
     padding: 0.5rem 1rem;
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Proza Libre', sans-serif;
 }
 
 a:hover {

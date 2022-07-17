@@ -8,6 +8,8 @@ import Blogs from './Pages/Blogs/Blogs';
 import Contact from './Pages/Contact/Contact';
 import ProductDetail from './Pages/Products/ProductDetail/ProductDetail';
 import BuyNow from './Pages/Products/BuyNow/BuyNow';
+import NotFound from './Utilities/NotFound';
+import Footer from './Pages/Shared-Folder/Footer';
 function App() {
 
   return (
@@ -24,7 +26,10 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
 
+        <Route path="/*" element={<NotFound />}></Route>
+
       </Routes>
+      <Footer />
     </div>
   );
 }

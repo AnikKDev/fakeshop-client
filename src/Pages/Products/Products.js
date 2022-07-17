@@ -14,9 +14,9 @@ const Products = () => {
 
     return (
         <div className="my-5">
-            <h3 className="text-center">Our Products</h3>
+            <h3 className="text-center product-heading">Our Products</h3>
 
-            <div className="row mx-auto px-4 my-5 gy-5">
+            <div className="row mx-auto px-4 mb-5 mt-3 gy-5">
                 {
                     products.map(product => <Product product={product} key={product.id} />)
                 }

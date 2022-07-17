@@ -3,6 +3,9 @@ import { useParams, Link, Outlet } from 'react-router-dom'
 import { useQuery } from 'react-query';
 import './ProductDetail.css';
 import LoadingSpinner from '../../../Utilities/LoadingSpinner';
+import { BiCategoryAlt } from 'react-icons/bi';
+import { AiOutlineStar } from 'react-icons/ai';
+import { BsFillPeopleFill } from 'react-icons/bs';
 const ProductDetail = () => {
     // get single product
     const { id } = useParams();
@@ -25,13 +28,13 @@ const ProductDetail = () => {
                     <p className="text-muted">
                         {product?.description}
                     </p>
-                    <div className="d-md-flex w-50 mt-2 ">
-                        <h6 className="mx-3">{product?.category}</h6>
-                        <h6 className="text-muted mx-3">{product?.rating?.rate} ({product?.rating?.count})</h6>
+                    <div className="d-md-flex w-75 mt-2 ">
+                        <h6 className="mx-3"><BiCategoryAlt className="me-2"></BiCategoryAlt>{product?.category}</h6>
+                        <h6 className="text-muted mx-3"><i class="fa-solid fa-star"></i>{product?.rating?.rate}( <i class="fa-solid fa-user-group"></i>{product?.rating?.count})</h6>
                     </div>
                 </div>
                 <Link to={`buy-now/${id}`}>
-                    <button className="buy-now-btn mt-5">Buy Now</button>
+                    <button className="buy-now-btn mt-5"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </Link>
             </div>
             {/* nested route with product purchase info */}

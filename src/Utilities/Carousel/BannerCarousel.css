@@ -1,9 +1,11 @@
 .banner-headings {
     color: white;
     font-weight: bold;
+    font-family: 'Lato', sans-serif;
 }
 
 .banner-info {
     color: white;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-family: 'Proza Libre', sans-serif;
 }
