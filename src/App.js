@@ -10,46 +10,24 @@ import ProductDetail from './Pages/Products/ProductDetail/ProductDetail';
 import BuyNow from './Pages/Products/BuyNow/BuyNow';
 import NotFound from './Utilities/NotFound';
 import Footer from './Pages/Shared-Folder/Footer';
-import { useEffect, useState } from 'react';
+import useSearchProduct from './hooks/useSearchProduct';
 function App() {
-  // declaring auto suggestions with search
-  const [products, setProducts] = useState([]);
-  const [texts, setTexts] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(res => res.json())
-      .then(data => setProducts(data))
-  }, []);
-
-  const onChangeHandler = (text) => {
-    let matches = [];
-    if (text.length > 0) {
-      matches = products.filter(product => {
-        const regEx = new RegExp(`${text}`, "gi");
-        return product.title.match(regEx);
-      })
-    }
-    // console.log(matches)
-    setSuggestions(matches)
-    setTexts(text);
-
-  };
+  const { onChangeHandler, texts, suggestions } = useSearchProduct();
   return (
     <div>
       <Header onChangeHandler={onChangeHandler} texts={texts} />
       <Routes>
-        <Route path="/" element={<Home suggestions={suggestions} products={products}></Home>} />
-        <Route path="/home" element={<Home suggestions={suggestions} products={products}></Home>} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail />} >
+        <Route path="/" element={<Home suggestions={suggestions} ></Home>} />
+        <Route path="/home" element={<Home suggestions={suggestions}></Home>} />
+        <Route path="/products" element={<Products suggestions={suggestions} />} />
+        <Route path="/products/:id" element={<ProductDetail suggestions={suggestions} />} >
           <Route path="buy-now/:id" element={<BuyNow></BuyNow>}></Route>
         </Route>
-        <Route path="/about" element={<About />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About suggestions={suggestions} />} />
+        <Route path="/blogs" element={<Blogs suggestions={suggestions} />} />
+        <Route path="/contact" element={<Contact suggestions={suggestions} />} />
 
-        <Route path="/*" element={<NotFound />}></Route>
+        <Route path="/*" element={<NotFound suggestions={suggestions} />}></Route>
 
       </Routes>
       <Footer />

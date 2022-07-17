@@ -9,4 +9,9 @@
 
 .suggestion-container ul li {
     background-color: #F8F9FA;
+    transition: 0.2s;
+}
+
+.suggestion-container ul li:hover {
+    background-color: #fff;
 }

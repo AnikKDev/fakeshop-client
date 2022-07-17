@@ -10,7 +10,6 @@ const BuyNow = () => {
     const { id } = useParams();
 
     const { data: buyingProduct, isLoading } = useQuery(['buingProduct'], () => fetch(`https://fakestoreapi.com/products/${id}`).then(res => res.json()));
-    // console.log(buyingProduct)
 
     // const { title, image, price, description, rating, category } = buyingProduct;
 
@@ -24,7 +23,7 @@ const BuyNow = () => {
     }
     return (
         <div className="my-5">
-            <Form className="w-50 mx-auto" onSubmit={handleSubmit}>
+            <Form className="w-75 mx-auto" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="productName">
                     <Form.Control type="text" value={buyingProduct?.title} disabled />
                 </Form.Group>
