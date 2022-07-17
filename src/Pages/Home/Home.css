@@ -1,0 +1,12 @@
+.suggestion-container {
+    max-height: 30vh;
+    overflow: auto;
+    position: absolute;
+    z-index: 50;
+    right: 0;
+
+}
+
+.suggestion-container ul li {
+    background-color: #F8F9FA;
+}
